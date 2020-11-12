@@ -14,7 +14,7 @@ ISR(TIMER1_COMPA_vect){
 void timer_delay(uint8_t seconds){
   TCCR1A = 0b00000000; //clear timer on compare mode
   TCCR1B = 0b00001101; //prescaler to 4seconds
-  OCR1A = 15624; //for three seconds
+  OCR1A = 15624; //for 1 second
   TIMSK1 = 0b00000010; //corresponding to OCR1A
   overflow = 0;
   while(overflow < seconds){
